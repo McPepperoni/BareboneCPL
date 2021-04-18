@@ -7,13 +7,11 @@ int main()
     string input = "clear a;\nclear b;";
     
     Lex *lexer;
-    Parser *parser;
-
-    Emitter emitter("out.cpp");    
+    Parser *parser; 
 
     lexer = Lex::getInstance(input);
     
-    parser = Parser::getInstance(lexer, emitter);
+    parser = Parser::getInstance(lexer, "out.cpp");
 
     parser->program();
     cout <<"complete";

@@ -3,9 +3,10 @@
 
 using namespace std;
 
-Parser::Parser(Lex *_lexer)
+Parser::Parser(Lex *_lexer, string path)
 {
     lexer = _lexer;
+    emitter = new Emitter(path);
 }
 
 void Parser::nextToken()
@@ -38,8 +39,8 @@ void Parser::abortParser(string _message)
 
 Parser* Parser::getInstance(Lex *_lexer, string path)
 {
-    static Parser *_instance = new Parser(_lexer);
-    emitter = new Emitter(path);
+    static Parser *_instance = new Parser(_lexer, path);
+    
     _instance->nextToken();
     _instance->nextToken();
 
@@ -48,6 +49,8 @@ Parser* Parser::getInstance(Lex *_lexer, string path)
 
 void Parser::program()
 {
+    emitter->emitHeader("#include <iostream> \nusing namespace std; \nint main() {");
+    
     cout << "PROGRAM" << endl;
     while(!checkToken(TokenType::EF)) statement();
 }

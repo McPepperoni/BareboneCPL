@@ -35,7 +35,7 @@ class Parser
 
         bool checkExistVariable(string var, int &pos);
     public:
-        Parser(Lex *_lexer);
+        Parser(Lex *_lexer, string path);
 
         static Parser* getInstance(Lex *_lexer, string path);
         void program();
