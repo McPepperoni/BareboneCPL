@@ -6,7 +6,7 @@ This whole project is written in C++.
 - **clear** variable : create new variable with value of 0/ set a variable value to 0(if already exist).
 - **incr** variable : increase variable by 1.
 - **decr** variable : decrease variable by 1.
-- **while** variable not **number** : as read.
+- **while** variable **not** number : as read.
 - **end**: end of while loop.
 - **print variable : extra to print a variable value
 
