@@ -18,7 +18,7 @@ int main()
         {
             input += tp + '\n';
         }
-        inbrb.close(); //close the file object.
+        inbrb.close(); 
 
         Lex *lexer;
         Parser *parser; 
@@ -28,7 +28,7 @@ int main()
         parser = Parser::getInstance(lexer, "out.cpp");
 
         parser->program();
-        cout <<"complete";
+        cout <<"Completed";
 
         system("g++ -g -o out out.cpp -lstdc++");
         system("START cmd.exe /k \"cd D:\\Barebone Compiler & out.exe\"");
