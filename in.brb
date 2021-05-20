@@ -1,0 +1,8 @@
+clear a;
+while a not 5;
+    incr a;
+    decr a;
+    incr a;
+
+    print a;
+end;

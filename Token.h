@@ -19,8 +19,6 @@ public:
     Token(string _text, TokenType _kind);
     TokenType getKind();
     string getText();
-
-    int stringToInt();
 };
 
 #endif

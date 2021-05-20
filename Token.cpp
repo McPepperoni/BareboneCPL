@@ -24,16 +24,3 @@ string Token::getText()
 {
     return text;
 }
-
-int Token::stringToInt()
-{
-    int temp;
-
-    for(int i = 0; i < text.size(); i++)
-    {
-        temp += int(text[i]) - 48;
-        if(i != text.size() - 1) temp *= 10;
-    }
-
-    return temp;
-}

@@ -4,29 +4,29 @@
 
 using namespace std;
 
-emitter::Emitter(string _path)
+Emitter::Emitter(string _path)
 {
     path = _path;
     header = "";
     code = "";
 }
 
-void emitter::emit(string _code)
+void Emitter::emit(string _code)
 {
     code += _code;
 }
 
-void emitter::emitLine(string _code)
+void Emitter::emitLine(string _code)
 {
     code += _code + '\n';
 }
 
-void emitter::emitHeader(string _code)
+void Emitter::emitHeader(string _code)
 {
     header += _code + '\n';
 }
 
-void emitter::writeFile()
+void Emitter::writeFile()
 {
     ofstream myFile;
 

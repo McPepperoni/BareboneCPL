@@ -11,7 +11,6 @@ class Variable
 {
 private:
     string name;
-    ull value;
 public:
     Variable();
     Variable(string _name);
@@ -19,9 +18,6 @@ public:
     string getName();
     
     void setValue(ull _value);
-    void incr();
-    void decr();
-    void printVar();
 };
 
 

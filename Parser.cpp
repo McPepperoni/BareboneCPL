@@ -53,6 +53,9 @@ void Parser::program()
     
     cout << "PROGRAM" << endl;
     while(!checkToken(TokenType::EF)) statement();
+
+    emitter->emitLine("}");
+    emitter->writeFile();
 }
 
 bool Parser::checkExistVariable(string var, int &pos)
@@ -77,15 +80,15 @@ void Parser::statement()
         if(checkPeek(TokenType::VAR)) 
         {
             cout << "Clear --- Variable" << endl;
-
             int pos;
             if(checkExistVariable(peekToken.getText(), pos))
             {
-                variables[pos].setValue(0);
+                emitter->emitLine(peekToken.getText() + " = 0;");
             }
             else
             {
                 variables.push_back(Variable(peekToken.getText()));
+                emitter->emitLine("int " + peekToken.getText() + " = 0;");
             }
         }
     }
@@ -97,7 +100,7 @@ void Parser::statement()
             int pos;
             if(checkExistVariable(peekToken.getText(), pos))
             {
-                variables[pos].incr();
+                emitter->emitLine(peekToken.getText() + "++;");
             }
             else abortParser(peekToken.getText() + "has not been defined in scope.");
         }       
@@ -110,7 +113,7 @@ void Parser::statement()
             int pos;
             if(checkExistVariable(peekToken.getText(), pos))
             {
-                variables[pos].decr();
+                emitter->emitLine(peekToken.getText() + "--;");
             }
             else abortParser(peekToken.getText() + "has not been defined in scope.");
         }
@@ -123,7 +126,7 @@ void Parser::statement()
 
             if(checkExistVariable(peekToken.getText(), pos))
             {
-                variables[pos].printVar();
+                emitter->emitLine("cout << " + peekToken.getText() + " << endl;");
             }
             else abortParser(peekToken.getText() + "has not been defined in scope.");
         }
@@ -136,17 +139,21 @@ void Parser::statement()
             int pos;
             if(!checkExistVariable(currToken.getText(), pos)) abortParser(peekToken.getText() + "has not been defined in scope.");
             
+            string tempName = currToken.getText();
+
             nextToken();
             nextToken();
             if(checkToken(TokenType::NUMBER) && checkPeek(TokenType::ENDSTATE))
             {
-                int endCondition = currToken.stringToInt();
+                string endCondition = currToken.getText();
 
                 cout << "WHILE --- VARIABLE --- NOT --- NUMBER" << endl;
                 nextToken();
                 nextToken();
 
                 if(checkToken(TokenType::END)) abortParser("While statement missing a body");
+
+                emitter->emitLine("while(" + tempName + " != " +  endCondition + ") {");
 
                 while (!checkToken(TokenType::END))
                 {
@@ -156,6 +163,7 @@ void Parser::statement()
                 
                 //matchToken(TokenType::END);
                 cout << "END_WHILE" << endl;
+                emitter->emitLine("}");
                 nextToken();
             }
             else abortParser("While statement has unexpected syntax.");

@@ -3,6 +3,7 @@
 
 #include "Lex.h"
 #include "Variable.h"
+#include "Emitter.h"
 
 #include "iostream"
 #include <vector>
