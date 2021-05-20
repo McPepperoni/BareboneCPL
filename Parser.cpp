@@ -88,7 +88,7 @@ void Parser::statement()
             else
             {
                 variables.push_back(Variable(peekToken.getText()));
-                emitter->emitLine("int " + peekToken.getText() + " = 0;");
+                emitter->emitLine("unsigned int " + peekToken.getText() + " = 0;");
             }
         }
     }
