@@ -3,12 +3,12 @@
 This is a school project. This is a first completed project of mine so excuse me if my code insulted you in any way.
 This whole project is written in C++.
 1. Syntax included:
-- **clear variable** : create new variable with value of 0/ set a variable value to 0(if already exist).
-- **incr variable** : increase variable by 1.
-- **decr variable** : decrease variable by 1.
-- **while variable not number** : as read.
+- **clear** variable : create new variable with value of 0/ set a variable value to 0(if already exist).
+- **incr** variable : increase variable by 1.
+- **decr** variable : decrease variable by 1.
+- **while** variable not **number** : as read.
 - **end**: end of while loop.
-- **print variable** : extra to print a variable value
+- **print variable : extra to print a variable value
 
 ### Notice: every line ends with a semicolon ";".
 2. Usage:
