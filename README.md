@@ -16,5 +16,7 @@ This whole project is written in C++.
 - Input codes is to put in "in.brb" file.
 3. How it works:
 - Input codes are read as lines then translate to C++ to compile.
+- After run main.exe the translated code will be written in out.cpp.
+- Then out.cpp will be compiled into out.exe then executed.
 
 Heavily inspired by a blog by [Austin Z. Henley](http://web.eecs.utk.edu/~azh/blog/teenytinycompiler1.html)
