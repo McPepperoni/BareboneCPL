@@ -10,7 +10,7 @@ This whole project is written in C++.
 - **end**: end of while loop.
 - **print variable** : extra to print a variable value
 
-### Notice: every line end with a semicolon ";".
+### Notice: every line ends with a semicolon ";".
 2. Usage:
 - All .cpp and .h file is included compile and use.
 - Input codes is to put in "in.brb" file.
