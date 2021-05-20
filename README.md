@@ -1,7 +1,7 @@
 # BareboneCPL
 
 This is a school project. This is a first completed project of mine so excuse me if my code insulted you in any way.
-This whole project is writen in C++.
+This whole project is written in C++.
 1. Syntax included:
 - **clear variable** : create new variable with value of 0/ set a variable value to 0(if already exist).
 - **incr variable** : increase variable by 1.
