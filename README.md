@@ -8,6 +8,7 @@ This whole project is written in C++.
 - **decr** variable : decrease variable by 1.
 - **while** variable **not** number : as read.
 - **end**: end of while loop.
+-------------------------------------------------------
 - **print** variable : extra to print a variable value
 
 ### Notice: every line ends with a semicolon ";".
