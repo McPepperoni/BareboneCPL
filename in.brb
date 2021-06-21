@@ -1,8 +1,20 @@
-clear a;
-while a not 5;
-    	clear b;
-	while b not 10;
-		incr b;
-	end;
-	incr a;
+clear y;
+while y not 10;
+	incr y;
 end;
+
+clear x;
+incr x;
+while x not 4;
+	clear temp;
+	while temp not 10;
+		clear tempX;
+		while tempX not y;
+			incr x;
+			incr tempX;
+		end;
+		incr temp;
+	end;
+end;
+
+
